@@ -9,6 +9,10 @@ describe '/api/login' do
       end
     end
     context 'invalid params' do
+      context 'incorrect password' do
+      end
+      context "with a non-existent login" do
+      end
     end
   end
   context 'positive tests' do
