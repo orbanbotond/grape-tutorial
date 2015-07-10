@@ -30,8 +30,19 @@ describe '/api/login' do
     end
     context 'invalid params' do
       context 'incorrect password' do
+        let(:params) { original_params.merge(password: 'invalid') }
+
+        it_behaves_like '401'
+        it_behaves_like 'json result'
+
+        it_behaves_like 'contains error msg', 'Bad Authentication Parameters'
       end
       context "with a non-existent login" do
+        let(:params) { original_params.merge(email: 'notreal', password: 'invalid') }
+        it_behaves_like '401'
+        it_behaves_like 'json result'
+
+        it_behaves_like 'contains error msg', 'Bad Authentication Parameters'
       end
     end
   end

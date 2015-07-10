@@ -5,6 +5,13 @@ RSpec.shared_examples 'json result' do
   end
 end
 
+RSpec.shared_examples '401' do
+  specify 'returns 401' do
+    api_call params
+    expect(response.status).to eq(401)
+  end
+end
+
 RSpec.shared_examples '400' do
   specify 'returns 400' do
     api_call params
