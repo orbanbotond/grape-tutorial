@@ -1,6 +1,5 @@
 source 'https://rubygems.org'
 
-
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.7'
 # Use sqlite3 as the database for Active Record
@@ -27,10 +26,18 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'spring',        group: :development
 gem 'devise'
 gem 'grape'
+gem 'grape-entity'
+gem 'squeel'
 
 group :development, :test do
   gem 'rspec-rails', '~> 3.2'
   gem 'factory_girl_rails', '~> 4.5'
+  gem 'pry'
+  gem 'pry-nav'
+end
+
+group :test do
+  gem 'grape-entity-matchers'
 end
 
 # Use ActiveModel has_secure_password
